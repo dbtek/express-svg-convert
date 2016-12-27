@@ -24,7 +24,7 @@ $ node .
 ### Params
 
 Supported params are: format, scale.
-`/api/convert?format=[png|pdf]&scale=[number]
+> `http://localhost:8081/api/convert?format=[png|pdf]&scale=[number]`
 
 #### Custom Port
 
