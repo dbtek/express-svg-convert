@@ -5,6 +5,7 @@ const Rsvg = require('librsvg').Rsvg
 const fileupload = require('express-fileupload')
 const fs = require('fs')
 const port = process.env.SVG_CONVERT_PORT || 8001
+const crypto = require('crypto')
 
 let options = {
   format: 'pdf',
@@ -31,6 +32,15 @@ function renderSvg (rsvg, opts) {
 const app = express()
 // add file upload middleware
 app.use(fileupload())
+// add api ket authorization
+app.use(require('apikey')(auth, 'vault'));
+
+function auth (key, fn) {
+  if (process.env.SVG_CONVERT_API_KEY === key)
+    fn(null, {})
+  else
+    fn(null, null)
+}
 
 /**
  * Extracts options from request params

@@ -4,6 +4,8 @@ express-svg-convert
 A straightforward express server that converts multipart/form-data svg files to pdf or png files.
 Uses [librsvg](https://npmjs.com/package/librsvg), [express](https://npmjs.com/package/express), [express-fileupload](https://npmjs.com/package/express-fileupload).
 
+This fork adds apikey authentication to original project.
+
 ### Install
 - Download or clone repo.
 - cd into downloaded & extracted folder
@@ -30,6 +32,11 @@ Supported params are: format, scale.
 
 ```bash
 $ export SVG_CONVERT_PORT=8001
+```
+
+#### Api Key
+```bash
+$ export SVG_CONVERT_API_KEY=secret-api-key
 ```
 
 ### Usage
@@ -74,7 +81,7 @@ var svg = `
 var formData = new FormData()
 formData.append('svg', new Blob([svg]))
 
-fetch('http://localhost:8081/api/convert', {
+fetch(':secret-api-key@http://localhost:8081/api/convert', {
   method: 'POST',
   body: formData
 })
