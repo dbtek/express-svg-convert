@@ -13,7 +13,7 @@ This fork adds apikey authentication to original project.
 $ npm install
 ```
 
-### Run
+### Run
 ```bash
 $ node .
 ```
@@ -39,7 +39,7 @@ $ export SVG_CONVERT_PORT=8001
 $ export SVG_CONVERT_API_KEY=secret-api-key
 ```
 
-### Usage
+### Usage
 
 Sample usage in browser:
 ```js
