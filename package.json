@@ -4,7 +4,8 @@
   "description": "Svg conversion through express server with streams. Uses librsvg.",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "start": "node ."
   },
   "repository": {
     "type": "git",
