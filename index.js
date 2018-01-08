@@ -20,7 +20,7 @@ function renderSvg (rsvg, opts) {
   if (!opts) {
     opts = options
   }
-  return new Buffer(rsvg.render({
+  return Buffer.from(rsvg.render({
     format: opts.format,
     width: opts.width || rsvg.width * opts.scale,
     height: opts.height || rsvg.height * opts.scale
