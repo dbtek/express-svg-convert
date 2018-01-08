@@ -1,4 +1,4 @@
-FROM node:6-alpine
+FROM node:8-alpine
 
 # install dependencies
 RUN apk add --update cairo librsvg-dev python gcc make g++
