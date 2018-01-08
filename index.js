@@ -14,7 +14,7 @@ let options = {
 
 /**
  * Renders svg via librsvg
- * @return {Object} rsvg Rsvg instance
+ * @param {Object} rsvg Rsvg instance
  * @return {Buffer}      Resulting buffer
  */
 function renderSvg (rsvg, opts) {
@@ -32,7 +32,7 @@ function renderSvg (rsvg, opts) {
 const app = express()
 // add file upload middleware
 app.use(fileupload())
-// add api ket authorization
+// add api key authorization
 app.use(require('apikey')(auth, 'vault'));
 
 function auth (key, fn) {
@@ -44,7 +44,8 @@ function auth (key, fn) {
 
 /**
  * Extracts options from request params
- * @type {Object}
+ * @param {Object} req - HTTP request
+ * @return {Object} - Rsvg options
  */
 function getOptions (req) {
   let params = Object.assign({}, options)
