@@ -5,7 +5,6 @@ const Rsvg = require('librsvg').Rsvg
 const fileupload = require('express-fileupload')
 const fs = require('fs')
 const port = process.env.SVG_CONVERT_PORT || 8001
-const crypto = require('crypto')
 
 let options = {
   format: 'pdf',
