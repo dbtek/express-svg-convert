@@ -32,13 +32,14 @@ const app = express()
 // add file upload middleware
 app.use(fileupload())
 // add api key authorization
-app.use(require('apikey')(auth, 'vault'));
+app.use(require('apikey')(auth, 'vault'))
 
 function auth (key, fn) {
-  if (process.env.SVG_CONVERT_API_KEY === key)
+  if (process.env.SVG_CONVERT_API_KEY === key) {
     fn(null, {})
-  else
+  } else {
     fn(null, null)
+  }
 }
 
 /**
@@ -70,8 +71,7 @@ app.get('/sample', (req, res) => {
       res.attachment('sample.' + params.format)
         .send(output)
     })
-  }
-  catch (ex) {
+  } catch (ex) {
     res.status(500)
       .json(JSON.stringify({
         error: 'Bad request',
