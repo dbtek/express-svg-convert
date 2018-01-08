@@ -4,9 +4,17 @@ express-svg-convert
 A straightforward express server that converts multipart/form-data svg files to pdf or png files.
 Uses [librsvg](https://npmjs.com/package/librsvg), [express](https://npmjs.com/package/express), [express-fileupload](https://npmjs.com/package/express-fileupload).
 
-### Run with Docker
+## Run with Docker
 ```bash
 $ docker run -p 8001:8001 -e SVG_CONVERT_API_KEY="secret-api-key" --name svgconverter -it dbtek/express-svg-convert
+```
+
+## Development
+
+### Prerequisites
+On macOs:
+```bash
+$ brew install cairo librsvg
 ```
 
 ### Install
