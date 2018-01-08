@@ -63,7 +63,6 @@ function getOptions (req) {
 // sample file conversion endpoint
 app.get('/sample', (req, res) => {
   const params = getOptions(req)
-  const opts = Object.assign({}, options, {})
   try {
     fs.readFile('sample.svg', function (err, data) {
       if (err) throw err
