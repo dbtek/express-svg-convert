@@ -28,7 +28,7 @@
   "homepage": "https://github.com/dbtek/express-svg-convert#readme",
   "dependencies": {
     "apikey": "^0.1.2",
-    "express": "^4.14.0",
+    "express": "^4.17.3",
     "express-fileupload": "1.1.9",
     "librsvg": "^0.7.0"
   }
